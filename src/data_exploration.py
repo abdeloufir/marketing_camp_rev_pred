@@ -34,4 +34,4 @@ df['Conversion_Rate'] = df.apply(lambda x: x['Total_Conversion'] / x['Clicks'] i
 #cost per conversion col
 df['Cpa'] = df.apply(lambda x: x['Spent'] / x['Total_Conversion'] if x['Total_Conversion'] != 0 else 0, axis=1)
 
-print(df.head())
+df.to_csv(r'C:\Users\S580381\Documents\GitHub\marketing_camp_rev_pred\data\processed_fb_ad_camps.csv', index=False)
