@@ -6,7 +6,6 @@ df = pd.read_csv(r'C:\Users\S580381\Documents\GitHub\marketing_camp_rev_pred\dat
 
 #make age a numerical value
 #make age the mean of the two values
-#make interest cat as each number means a specific interest
 #make gender cat
 
 df['age_start'], df['age_end'] = zip(*df['age'].apply(lambda x: map(int, x.split('-'))))
@@ -14,7 +13,6 @@ df['age_start'] = df['age_start'].astype(int)
 df['age_end'] = df['age_end'].astype(int)
 df['age'] = ((df['age_start'] + df['age_end']) / 2).astype(int)
 
-df['interest'] = df['interest'].astype('category')
 df['gender'] = df['gender'].astype('category')
 
 df.drop(columns=['age_start', 'age_end'], inplace=True)
