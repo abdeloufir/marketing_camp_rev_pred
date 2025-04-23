@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-df = pd.read_csv(r'C:\Users\S580381\Documents\GitHub\marketing_camp_rev_pred\data\fb_ad_camps.csv')
+df = pd.read_csv('data\fb_ad_camps.csv')
 
 #make age a numerical value
 #make age the mean of the two values
@@ -32,4 +32,4 @@ df['Conversion_Rate'] = df.apply(lambda x: x['Total_Conversion'] / x['Clicks'] i
 #cost per conversion col
 df['Cpa'] = df.apply(lambda x: x['Spent'] / x['Total_Conversion'] if x['Total_Conversion'] != 0 else 0, axis=1)
 
-df.to_csv(r'C:\Users\S580381\Documents\GitHub\marketing_camp_rev_pred\data\processed_fb_ad_camps.csv', index=False)
+df.to_csv('data\processed_fb_ad_camps.csv', index=False)
